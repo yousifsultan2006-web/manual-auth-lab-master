@@ -36,3 +36,8 @@ export const createUser = async (username, plainPassword, role = "user") => {
         role
     };
 };
+
+export const validatePassword = async (plainPassword, storedHash) => {
+    return await bcrypt.compare(plainPassword, storedHash);
+
+};
